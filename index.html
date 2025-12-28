@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>simpleflow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="form-container">
+        <!-- Left bar -->
+        <section class="auth-visual">
+          <div class="auth-visual__content">
+            <div>
+              <h1 class="auth-visual__title">Welcome to SimpleFlow</h1>
+              <p class="auth-visual__description">Your Gateway to Effortless Management.</p>
+            </div>
+            <div>
+              <h2 class="auth-section-title">Seamless Collaboration</h2>
+              <p class="auth-visual__description">Effortlessly work together with your team in real-time.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Right Bar -->
+        <section class="auth-panel">
+          <div class="auth-card">
+            <div class="logo">
+              <img src="./assets/images/logo.svg" alt="SimpleFlow Logo" loading="eager" />
+            </div>
+
+            <div class="auth-tabs">
+              <button class="auth-tab active" type="button">Sign Up</button>
+              <button class="auth-tab" type="button">Sign In</button>
+            </div>
+
+            <form id="registerForm" class="form-section active" novalidate>
+              <!-- Username -->
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input id="username" name="username" type="text" placeholder="Pick A Username" autocomplete="off" />
+                <p class="field-error" id="usernameError"></p>
+              </div>
+
+              <!-- Full Name -->
+              <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input id="fullName" name="fullName" type="text" placeholder="Enter Your Name" autocomplete="name" />
+                <p class="field-error" id="fullNameError"></p>
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="Enter Your Email Address" autocomplete="email" />
+                <p class="field-error" id="emailError"></p>
+              </div>
+
+              <!-- Password -->
+              <div class="form-group">
+                <div class="label-row">
+                  <label for="password">Password</label>
+                </div>
+
+                <div class="password-wrapper">
+                  <input id="password" name="password" type="password" placeholder="Enter Password" autocomplete="new-password" />
+             
+
+                </div>
+
+                <div class="password-rules">
+                  <p class="password-rule" id="ruleStrength">
+                    <span class="rule-icon">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.3334 4L6.00008 11.3333L2.66675 8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    Password Strength: <span id="strengthLabel">Weak</span>
+                  </p>
+                  <p class="password-rule" id="ruleNoNameEmail">
+                    <span class="rule-icon">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.3334 4L6.00008 11.3333L2.66675 8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    Cannot contain your name or email address
+                  </p>
+                  <p class="password-rule" id="ruleMinLength">
+                    <span class="rule-icon">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.3334 4L6.00008 11.3333L2.66675 8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    At least 8 characters
+                  </p>
+                  <p class="password-rule" id="ruleNumberSymbol">
+                    <span class="rule-icon">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.3334 4L6.00008 11.3333L2.66675 8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    Contains a number or symbol
+                  </p>
+                </div>
+              </div>
+
+              <!-- Submit button -->
+              <button id="registerBtn" class="primary-btn" type="submit" disabled>Create Account</button>
+
+              <!-- Success messages -->
+              <p class="form-message success" id="successMessage">Account Created Successfully!</p>
+
+              <!-- Disclaimer -->
+              <p class="disclaimer">
+                By signing up to create an account I accept Company's
+                <a href="#" class="inline-link">Terms of use</a> & <a href="#" class="inline-link">Privacy Policy</a>.
+              </p>
+            </form>
+
+            <form id="loginForm" class="form-section" novalidate>
+              <!-- Email -->
+              <div class="form-group">
+                <label for="loginEmail">Email</label>
+                <input id="loginEmail" name="email" type="email" placeholder="Enter Your Email" autocomplete="email" />
+                <p></p>
+              </div>
+
+              <!-- Password -->
+              <div class="form-group">
+                <div class="label-row">
+                  <label for="loginPassword">Password</label>
+                  <button type="button" class="link-button" id="forgotPasswordLink">Forgot Password?</button>
+                </div>
+
+                <div class="password-wrapper">
+                  <input id="loginPassword" name="password" type="password" placeholder="Enter Your Password" autocomplete="new-password" />
+                  <button type="button" class="toggle-password" id="togglePasswordLogin">Show</button>
+                </div>
+              </div>
+
+              <!-- Submit button -->
+              <button id="loginBtn" class="primary-btn" type="submit" disabled>Sign In</button>
+
+              <!-- Success & Error messages -->
+              <p class="form-message success" id="loginSuccess"></p>
+              <p class="form-message error" id="loginError"></p>
+
+              <!-- Disclaimer -->
+              <p class="disclaimer">
+                By signing up to create an account I accept Company's
+                <a href="#" class="inline-link">Terms of use</a> & <a href="#" class="inline-link">Privacy Policy</a>.
+              </p>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
